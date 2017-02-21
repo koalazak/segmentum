@@ -1,7 +1,7 @@
 # segmentum
 [![Build Status](https://travis-ci.org/koalazak/segmentum.svg?branch=master)](https://travis-ci.org/koalazak/segmentum)
 [![dependencies Status](https://david-dm.org/koalazak/segmentum/status.svg)](https://david-dm.org/koalazak/segmentum)
-[![npm version](https://badge.fury.io/js/segmentum.svg)](http://badge.fury.io/js/segmentum)
+[![npm version](https://badge.fury.io/js/segmentum.svg?r)](http://badge.fury.io/js/segmentum)
 
 Unoficial Segment.io Management node.js SDK (the scrapy way)
 
