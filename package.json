@@ -1,6 +1,6 @@
 {
   "name": "segmentum",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unoficial Segment.io Management node.js SDK",
   "main": "index.js",
   "directories": {
