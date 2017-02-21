@@ -3,7 +3,7 @@
 [![dependencies Status](https://david-dm.org/koalazak/segmentum/status.svg)](https://david-dm.org/koalazak/segmentum)
 [![npm version](https://badge.fury.io/js/segmentum.svg?r)](http://badge.fury.io/js/segmentum)
 
-Unoficial Segment.io Management node.js SDK (the scrapy way)
+Unofficial Segment.io Management node.js SDK (the scrapy way)
 
 # Install
 
