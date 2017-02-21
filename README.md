@@ -32,7 +32,7 @@ manage.login().then((data) => {
 
 ```
 
-Then run you script:
+Then run your script:
 
 ```
 $ node myapp.js
