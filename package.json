@@ -1,0 +1,60 @@
+{
+  "name": "segmentum",
+  "version": "1.0.0",
+  "description": "Unoficial Segment.io Management node.js SDK",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "check:style": "eslint .",
+    "test": "_mocha -- $npm_package_config_mocha && npm run check:style",
+    "test:coverage:run": "istanbul cover _mocha -- $npm_package_config_mocha",
+    "test:coverage:check": "istanbul check-coverage --functions 80",
+    "test:coverage": "npm run test:coverage:run && npm run test:coverage:check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koalazak/segmentum.git"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "mocha": "^3.1.2",
+    "istanbul": "^0.4.0",
+    "semistandard": "^9.1.0",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-config-semistandard": "^7.0.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "proxyquire": "^1.7.10"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "ramda": "^0.23.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "keywords": [
+    "unofficial",
+    "segment.io",
+    "segment",
+    "api",
+    "management",
+    "sdk",
+    "segmentum",
+    "scrap",
+    "scraping",
+    "analytics",
+    "segmentio",
+    "client",
+    "api"
+  ],
+  "author": "koalazak <zak.tux@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koalazak/segmentum/issues"
+  },
+  "homepage": "https://github.com/koalazak/segmentum#readme"
+}
