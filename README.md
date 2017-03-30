@@ -53,6 +53,7 @@ $ node myapp.js
  * <a href="#Segmentum"><code><b>Segmentum(options)</b></code></a>
  * <a href="#login"><code>manage.<b>login()</b></code></a>
  * <a href="#createWorkspace"><code>manage.<b>createWorkspace(data)</b></code></a>
+ * <a href="#deleteWorkspace"><code>manage.<b>deleteWorkspace(name)</b></code></a>
  * <a href="#createSource"><code>manage.<b>createSource(workspaceSlug, sourceType, data)</b></code></a>
  * <a href="#getWorkspaces"><code>manage.<b>getWorkspaces()</b></code></a>
  * <a href="#getSourceMetadata"><code>manage.<b>getSourceMetadata([sourceSlug])</b></code></a>
@@ -63,6 +64,8 @@ $ node myapp.js
  * <a href="#getProject"><code>manage.<b>getProject(workspaceSlug, name)</b></code></a>
  * <a href="#getBillingCounts"><code>manage.<b>getBillingCounts(workspaceSlug)</b></code></a>
  * <a href="#getBilling"><code>manage.<b>getBilling(workspaceSlug)</b></code></a>
+ * <a href="#getBilling"><code>manage.<b>connectWarehouse(workspaceSlug, warehouseId, data)</b></code></a>
+
 
 <a name="Segmentum"></a>
 ### Segmentum(options)
@@ -97,7 +100,7 @@ You need to call this before other methods to make sure you are logged in.
 ### manage.createWorkspace(data)
 
 * `data` is the require object data to create a workspace.
-  * `name`: Workspace name *require*
+  * `name`: Workspace name *required*
   * `slug`: Slug url *required*
   * `billing`: Object *required*
     * `email`: Manager Email address *required*
@@ -117,9 +120,18 @@ Return a promise that resolve to:
   ids: null }
 ```
 
+<a name="deleteWorkspace"></a>
+### manage.deleteWorkspace(data)
+
+* `name`: Workspace name *required*
+
+Return a promise that resolve to:
+```
+HTTP 203 - Non-authoritative Information
+```
 
 <a name="createSource"></a>
-### manage.createSourcew(workspaceSlug, sourceType, data)
+### manage.createSource(workspaceSlug, sourceType, data)
 
 * `workspaceSlug` is the Workspace slugh when you want to create a new source
 * `sourceType` is the source type
@@ -440,3 +452,15 @@ Return a promise that resolve to a billing count object for the `workspaceSlug` 
   period: '2017-02-01T00:00:00Z',
   counts: { anonymous: 0, users: 1 } }
 ```
+
+<a name="connectWarehouse"></a>
+### manage.connectWarehouse(workspaceSlug, warehouseId, data)
+
+* `workspaceSlug`: Workspace slug
+* `warehouseId`: Id of the warehouse you want to connect with. Use getWarehouseMetadata().
+* `data`
+  * `username`: Database username.
+  * `password`: Database password.
+  * `host`: Database host.
+  * `port`: Database port
+  * `database`: Database name
