@@ -64,7 +64,7 @@ $ node myapp.js
  * <a href="#getProject"><code>manage.<b>getProject(workspaceSlug, name)</b></code></a>
  * <a href="#getBillingCounts"><code>manage.<b>getBillingCounts(workspaceSlug)</b></code></a>
  * <a href="#getBilling"><code>manage.<b>getBilling(workspaceSlug)</b></code></a>
- * <a href="#connectWarehouse"><code>manage.<b>connectWarehouse(workspaceSlug, warehouseId, data)</b></code></a>
+ * <a href="#createWarehouse"><code>manage.<b>createWarehouse(workspaceSlug, warehouseId, data)</b></code></a>
 
 
 <a name="Segmentum"></a>
@@ -453,14 +453,15 @@ Return a promise that resolve to a billing count object for the `workspaceSlug` 
   counts: { anonymous: 0, users: 1 } }
 ```
 
-<a name="connectWarehouse"></a>
-### manage.connectWarehouse(workspaceSlug, warehouseId, data)
+<a name="createWarehouse"></a>
+### manage.createWarehouse(workspaceSlug, warehouseId, data)
 
 * `workspaceSlug`: Workspace slug
 * `warehouseId`: Id of the warehouse you want to connect with. Use getWarehouseMetadata().
-* `data`
+* `settings`
   * `username`: Database username.
   * `password`: Database password.
   * `host`: Database host.
   * `port`: Database port
-  * `database`: Database name
+  * `database`: Database name.
+* `databaseId`: Type Id for the database
