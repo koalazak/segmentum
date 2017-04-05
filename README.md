@@ -94,7 +94,7 @@ Return a promise that resolve to:
   features: null }
 ```
 
-You need to call this before other methods to make sure you are logged in.
+You need to call this before other methods to make sure you are logged in. Re-login is automaticaly handled if you call a method and your session is expired.
 
 <a name="createWorkspace"></a>
 ### manage.createWorkspace(data)
