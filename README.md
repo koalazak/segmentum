@@ -64,6 +64,12 @@ $ node myapp.js
 
  * <a href="#createSource"><code>manage.<b>createSource(workspaceSlug, sourceType, data)</b></code></a>
 
+ * <a href="#getSources"><code>manage.<b>getSources(workspaceSlug)</b></code></a>
+
+ * <a href="#getSource"><code>manage.<b>getSource(workspaceSlug, name)</b></code></a>
+ 
+ * <a href="#deleteSource"><code>manage.<b>deleteSource(workspaceSlug, sourceType)</b></code></a>
+
  * <a href="#getIntegrationMetadata"><code>manage.<b>getIntegrationMetadata(integrationSlug)</b></code></a>
 
  * <a href="#setIntegration"><code>manage.<b>setIntegration(workspaceSlug, sourceSlug, integrationName, integrationSlug, data)</b></code></a>
@@ -75,10 +81,6 @@ $ node myapp.js
  * <a href="#getWarehouseMetadata"><code>manage.<b>getWarehouseMetadata([wherehouseSlug])</b></code></a>
 
  * <a href="#createWarehouse"><code>manage.<b>createWarehouse(workspaceSlug, warehouseId, data)</b></code></a>
-
- * <a href="#getProjects"><code>manage.<b>getProjects(workspaceSlug)</b></code></a>
-
- * <a href="#getProject"><code>manage.<b>getProject(workspaceSlug, name)</b></code></a>
 
  * <a href="#getBillingCounts"><code>manage.<b>getBillingCounts(workspaceSlug)</b></code></a>
 
@@ -296,6 +298,101 @@ Return a promise that resolve to:
   "settings": {},
   "advancedSync": null
 }
+```
+
+<a name="getSources"></a>
+### manage.getSources(workspaceSlug)
+
+Return a promise that resolve to an array of your sources for the `workspaceSlug` provided.
+
+```json
+[
+  {
+    "id": "xxxxxxx",
+    "version": 2,
+    "created": "2017-02-21T13:26:28.951Z",
+    "createdBy": "",
+    "url": null,
+    "slug": "newslug",
+    "workspaceId": "yyyyyyyyy",
+    "lastSeen": "0001-01-01T00:00:00Z",
+    "collaborators": null,
+    "readKeys": [
+      "1231231231231231231231231231"
+    ],
+    "writeKeys": [
+      "345345345345345345345353453451"
+    ],
+    "plan": null,
+    "timezone": "America/Los_Angeles",
+    "name": "newname",
+    "sourceId": "U9mT0bPcI6",
+    "enabled": true,
+    "settings": null,
+    "advancedSync": null
+  },
+  {
+    "id": "zzzzzzzz",
+    "version": 2,
+    "created": "2017-02-21T02:52:53.499Z",
+    "createdBy": "",
+    "url": null,
+    "slug": "nodejs",
+    "workspaceId": "yyyyyyy",
+    "lastSeen": "0001-01-01T00:00:00Z",
+    "collaborators": null,
+    "readKeys": [
+      "1231231231231231231231231232"
+    ],
+    "writeKeys": [
+      "345345345345345345345353453452"
+    ],
+    "plan": null,
+    "timezone": "America/Los_Angeles",
+    "name": "Nodejs",
+    "sourceId": "U9mT0bPcI6",
+    "enabled": true,
+    "settings": null,
+    "advancedSync": null
+  }
+]
+```
+<a name="getSource"></a>
+### manage.getSource(workspaceSlug, name)
+
+Return a promise that resolve to a source object in the `workspaceSlug` provided.
+
+```json
+{
+  "installed": {
+    "url": "/workspaceslug/sources/newslug",
+    "writeKey": "345345345345345345345353453452",
+    "status": false,
+    "docs": "/docs/sources/server/node/quickstart",
+    "type": "Node.js"
+  },
+  "integrations": {
+    "url": "/workspaceslug/sources/newslug/integrations",
+    "status": false,
+    "items": []
+  },
+  "warehouses": {
+    "url": "/workspaceslug/warehouses",
+    "status": false,
+    "items": []
+  }
+}
+```
+
+<a name="deleteSource"></a>
+### manage.deleteSource(workspaceSlug, sourceSlug)
+
+* `workspaceSlug`: workspace slug
+* `sourceSlug`: slug of the source to delete
+
+Return a promise that resolve to:
+```
+HTTP 203 - Non-authoritative Information
 ```
 
 <a name="getIntegrationMetadata"></a>
@@ -523,90 +620,6 @@ Return a promise that resolve to an Array of available Wherehouses or a specific
   * `port`: Database port
   * `database`: Database name.
 * `databaseId`: Type Id for the database
-
-<a name="getProjects"></a>
-### manage.getProjects(workspaceSlug)
-
-Return a promise that resolve to an array of your projects for the `workspaceSlug` provided.
-
-```json
-[
-  {
-    "id": "xxxxxxx",
-    "version": 2,
-    "created": "2017-02-21T13:26:28.951Z",
-    "createdBy": "",
-    "url": null,
-    "slug": "newslug",
-    "workspaceId": "yyyyyyyyy",
-    "lastSeen": "0001-01-01T00:00:00Z",
-    "collaborators": null,
-    "readKeys": [
-      "1231231231231231231231231231"
-    ],
-    "writeKeys": [
-      "345345345345345345345353453451"
-    ],
-    "plan": null,
-    "timezone": "America/Los_Angeles",
-    "name": "newname",
-    "sourceId": "U9mT0bPcI6",
-    "enabled": true,
-    "settings": null,
-    "advancedSync": null
-  },
-  {
-    "id": "zzzzzzzz",
-    "version": 2,
-    "created": "2017-02-21T02:52:53.499Z",
-    "createdBy": "",
-    "url": null,
-    "slug": "nodejs",
-    "workspaceId": "yyyyyyy",
-    "lastSeen": "0001-01-01T00:00:00Z",
-    "collaborators": null,
-    "readKeys": [
-      "1231231231231231231231231232"
-    ],
-    "writeKeys": [
-      "345345345345345345345353453452"
-    ],
-    "plan": null,
-    "timezone": "America/Los_Angeles",
-    "name": "Nodejs",
-    "sourceId": "U9mT0bPcI6",
-    "enabled": true,
-    "settings": null,
-    "advancedSync": null
-  }
-]
-```
-<a name="getProject"></a>
-### manage.getProjects(workspaceSlug, name)
-
-Return a promise that resolve to a project object in the `workspaceSlug` provided.
-
-```json
-{
-  "installed": {
-    "url": "/workspaceslug/sources/newslug",
-    "writeKey": "345345345345345345345353453452",
-    "status": false,
-    "docs": "/docs/sources/server/node/quickstart",
-    "type": "Node.js"
-  },
-  "integrations": {
-    "url": "/workspaceslug/sources/newslug/integrations",
-    "status": false,
-    "items": []
-  },
-  "warehouses": {
-    "url": "/workspaceslug/warehouses",
-    "status": false,
-    "items": []
-  }
-}
-```
 
 <a name="getBillingCounts"></a>
 ### manage.getBillingCounts(workspaceSlug)
