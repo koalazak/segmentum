@@ -64,10 +64,12 @@ $ node myapp.js
 
  * <a href="#createSource"><code>manage.<b>createSource(workspaceSlug, sourceType, data)</b></code></a>
 
+ * <a href="#updateSource"><code>manage.<b>updateSource(workspaceSlug, sourceType, sourceSlug, data)</b></code></a>
+
  * <a href="#getSources"><code>manage.<b>getSources(workspaceSlug)</b></code></a>
 
  * <a href="#getSource"><code>manage.<b>getSource(workspaceSlug, name)</b></code></a>
- 
+
  * <a href="#deleteSource"><code>manage.<b>deleteSource(workspaceSlug, sourceType)</b></code></a>
 
  * <a href="#getIntegrationMetadata"><code>manage.<b>getIntegrationMetadata(integrationSlug)</b></code></a>
@@ -298,6 +300,63 @@ Return a promise that resolve to:
   "settings": {},
   "advancedSync": null
 }
+```
+
+<a name="updateSource"></a>
+### manage.updateSource(workspaceSlug, sourceType, sourceSlug, data)
+
+Uses a `PATCH` request under the hood. This means the data can only contain
+the desired changes.
+
+* `workspaceSlug` is the Workspace slug when you want to create a new source
+* `sourceType` is the source type
+* `sourceSlug`: slug of the source to update
+* `data` Object
+  * `name`: a Name for the new source.
+  * `enabled`: Boolean.
+
+```json
+{
+  id: "tttttttt",
+  created: "2017-02-21T13:26:28.951007525Z",
+  createdBy: '',
+  url: null,
+  slug: "newslug",
+  workspaceId: "gggggggg",
+  lastSeen: "0001-01-01T00:00:00Z",
+  collaborators: [],
+  readKeys: [
+    "123123123123123123123123123"
+  ],
+  writeKeys: [
+    "34534534534534534534535345345"
+  ],
+  timezone: "America/Los_Angeles",
+  name: "changedName",
+  sourceId: "sourceID",
+  enabled: true,
+  settings: null,
+  advancedSync: null,
+  workspace: {
+   id: "tttttttt",
+   created: "2017-02-21T13:26:28.951007525Z",
+   slug: "workspace-slug",
+   name: "WorkspaceSlug",
+   salesforce: null,
+   owners: [
+     "xxxxxxxx"
+   ],
+   features: null,
+   readKeys: [
+     "123123123123123123123123123"
+   ],
+   environment: null,
+   ids: null
+  },
+  hasSentData: true,
+  integrations: []
+}
+
 ```
 
 <a name="getSources"></a>
