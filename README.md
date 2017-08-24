@@ -423,23 +423,44 @@ Return a promise that resolve to a source object in the `workspaceSlug` provided
 
 ```json
 {
-  "installed": {
-    "url": "/workspaceslug/sources/newslug",
-    "writeKey": "345345345345345345345353453452",
-    "status": false,
-    "docs": "/docs/sources/server/node/quickstart",
-    "type": "Node.js"
+  "id": "tttttttt",
+  "created": "2017-02-21T13:26:28.951007525Z",
+  "createdBy": '',
+  "url": null,
+  "slug": "newslug",
+  "workspaceId": "gggggggg",
+  "lastSeen": "0001-01-01T00:00:00Z",
+  "collaborators": [],
+  "readKeys": [
+    "123123123123123123123123123"
+  ],
+  "writeKeys": [
+    "34534534534534534534535345345"
+  ],
+  "timezone": "America/Los_Angeles",
+  "name": "changedName",
+  "sourceId": "sourceID",
+  "enabled": true,
+  "settings": null,
+  "advancedSync": null,
+  "workspace": {
+    "id": "tttttttt",
+    "created": "2017-02-21T13:26:28.951007525Z",
+    "slug": "workspace-slug",
+    "name": "WorkspaceSlug",
+    "salesforce": null,
+    "owners": [
+        "xxxxxxxx"
+    ],
+    "features": null,
+    "readKeys": [
+        "123123123123123123123123123"
+    ],
+    "environment": null,
+    "ids": null
   },
-  "integrations": {
-    "url": "/workspaceslug/sources/newslug/integrations",
-    "status": false,
-    "items": []
-  },
-  "warehouses": {
-    "url": "/workspaceslug/warehouses",
-    "status": false,
-    "items": []
-  }
+  "hasSentData": true,
+  "integrations": []
 }
 ```
 
