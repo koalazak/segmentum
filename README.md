@@ -319,7 +319,7 @@ the desired changes.
 {
   "id": "tttttttt",
   "created": "2017-02-21T13:26:28.951007525Z",
-  "createdBy": '',
+  "createdBy": "",
   "url": null,
   "slug": "newslug",
   "workspaceId": "gggggggg",
@@ -425,7 +425,7 @@ Return a promise that resolve to a source object in the `workspaceSlug` provided
 {
   "id": "tttttttt",
   "created": "2017-02-21T13:26:28.951007525Z",
-  "createdBy": '',
+  "createdBy": "",
   "url": null,
   "slug": "newslug",
   "workspaceId": "gggggggg",
